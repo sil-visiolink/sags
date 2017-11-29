@@ -1,0 +1,8 @@
+*.pbxuser
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+xcuserdata/
+*.DS_Store
+.DS_Store
+*~
