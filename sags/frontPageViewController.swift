@@ -17,6 +17,7 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var expirationDate: UILabel!
     @IBOutlet weak var treatmentsTableView: UITableView!
     
+    var selectedTreatment: [String : Any] = [:]
     var suvoData = customerData()
     
     override func viewDidLoad() {
@@ -32,8 +33,6 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
         
         treatmentsTableView.delegate = self
         treatmentsTableView.dataSource = self
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,13 +40,39 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Behandlinger"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return suvoData.treatments.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "mycell")
+        let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
+        
+        var treatmentArray = suvoData.treatments[indexPath.row] as! [Any]
+        var treatments = treatmentArray[0] as! [String : Any]
+        cell.textLabel?.text = treatments["dato"] as? String
+        
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var treatmentArray = suvoData.treatments[indexPath.row] as! [Any]
+        self.selectedTreatment = treatmentArray[0] as! [String : Any]
+        super.performSegue(withIdentifier: "treatment_selected", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "treatment_selected" {
+            if segue.destination.isKind(of: treatmentCollectionViewController.self)  {
+                let treatmentCollectionViewController = segue.destination as! treatmentCollectionViewController
+                treatmentCollectionViewController.treatment = self.selectedTreatment
+            }
+        }
     }
     
 }
