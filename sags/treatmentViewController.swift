@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class treatmentCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -44,5 +45,12 @@ class treatmentCollectionViewController: UIViewController, UICollectionViewDataS
     func configureCell(cell: treatmentCollectionViewCell, forItemAtIndexPath: IndexPath) {
         let treatmentImageDict = imageArray[forItemAtIndexPath.item] as! [String : Any]
         cell.commentLabel.text = treatmentImageDict["billedbem"] as? String
+        
+        let url = URL(string: (treatmentImageDict["billedfil"] as? String)!)!
+        cell.imageView.kf.setImage(with: url)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 300, height: 300)
     }
 }
