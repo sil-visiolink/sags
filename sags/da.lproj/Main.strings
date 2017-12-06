@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0kT-8l-zLE"; */
+"0kT-8l-zLE.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8wK-aP-IZc"; */
+"8wK-aP-IZc.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Log ind"; ObjectID = "DNy-6Z-zib"; */
+"DNy-6Z-zib.normalTitle" = "Log ind";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "EB0-ew-Nfv"; */
+"EB0-ew-Nfv.text" = "Label";
+
+/* Class = "UILabel"; text = "Udløbsdato:"; ObjectID = "OKs-Ep-JKP"; */
+"OKs-Ep-JKP.text" = "Udløbsdato:";
+
+/* Class = "UILabel"; text = "Garantiperiode:"; ObjectID = "QFq-4G-687"; */
+"QFq-4G-687.text" = "Garantiperiode:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QKk-cv-nVZ"; */
+"QKk-cv-nVZ.text" = "Label";
+
+/* Class = "UILabel"; text = "Reg-nr:"; ObjectID = "RRG-4p-SeM"; */
+"RRG-4p-SeM.text" = "Reg-nr:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "V5e-CL-rhb"; */
+"V5e-CL-rhb.text" = "Label";
+
+/* Class = "UILabel"; text = "Pinkode"; ObjectID = "VGG-f0-9iX"; */
+"VGG-f0-9iX.text" = "Pinkode";
+
+/* Class = "UILabel"; text = "Comment"; ObjectID = "eEu-SN-Pyi"; */
+"eEu-SN-Pyi.text" = "Comment";
+
+/* Class = "UILabel"; text = "Kortnummer"; ObjectID = "fCS-XZ-koA"; */
+"fCS-XZ-koA.text" = "Kortnummer";
+
+/* Class = "UILabel"; text = "Reg dato:"; ObjectID = "nKL-2p-ytD"; */
+"nKL-2p-ytD.text" = "Reg dato:";
+
+/* Class = "UILabel"; text = "Treatment"; ObjectID = "pD2-Re-SZm"; */
+"pD2-Re-SZm.text" = "Treatment";
+
+/* Class = "UILabel"; text = "Stel-nr:"; ObjectID = "q36-sS-Es1"; */
+"q36-sS-Es1.text" = "Stel-nr:";
+
+/* Class = "UILabel"; text = "Car Brand"; ObjectID = "tYz-zX-eIJ"; */
+"tYz-zX-eIJ.text" = "Car Brand";
+
+/* Class = "UIBarButtonItem"; title = "Log ud"; ObjectID = "tdW-gi-sDT"; */
+"tdW-gi-sDT.title" = "Log ud";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wgV-dB-8vF"; */
+"wgV-dB-8vF.text" = "Label";
