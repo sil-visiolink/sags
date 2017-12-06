@@ -39,7 +39,9 @@ class treatmentCollectionViewController: UIViewController, UICollectionViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        navigationController?.navigationBar.barTintColor = UIColor(red: 249/255.0, green: 133.0/255.0, blue: 25.0/255.0, alpha: 1.0)
+        navigationController?.navigationBar.tintColor = UIColor.white
         
         treatmentHeader.text = self.treatment["behandlingstype"] as? String
         

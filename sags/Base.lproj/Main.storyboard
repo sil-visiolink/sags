@@ -96,7 +96,7 @@
                         <outlet property="cardNumberTextField" destination="pTE-t3-8nG" id="n5a-Mc-cjW"/>
                         <outlet property="loginButton" destination="DNy-6Z-zib" id="2d6-a2-SBo"/>
                         <outlet property="pinCodeTextField" destination="X1T-Ve-KyQ" id="U7F-bM-SZf"/>
-                        <segue destination="Iqi-jT-QiG" kind="showDetail" identifier="login_success" action="showViewController:sender:" id="wa3-H2-S1P"/>
+                        <segue destination="Iqi-jT-QiG" kind="show" identifier="login_success" id="Q0S-LV-3ix"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -133,7 +133,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Brand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYz-zX-eIJ">
                                         <rect key="frame" x="8" y="15" width="337" height="33.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                        <color key="textColor" red="0.97582393884658813" green="0.52265435457229614" blue="0.097811676561832428" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.97582393884658813" green="0.52265435457229614" blue="0.097811676561832428" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reg-nr:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRG-4p-SeM" userLabel="RegNr Label">
@@ -290,7 +290,11 @@
                         <viewLayoutGuide key="safeArea" id="DEL-Uj-cmQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="HBl-11-AIp">
-                        <barButtonItem key="rightBarButtonItem" title="Log ud" id="tdW-gi-sDT"/>
+                        <barButtonItem key="rightBarButtonItem" title="Log ud" id="tdW-gi-sDT">
+                            <connections>
+                                <action selector="logOut:" destination="ORf-Zm-QEe" id="BOe-c0-N6z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="VIN" destination="V5e-CL-rhb" id="q6u-Wr-2Lc"/>

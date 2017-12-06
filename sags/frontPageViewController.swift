@@ -22,7 +22,8 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        navigationController?.navigationBar.barTintColor = UIColor(red: 249/255.0, green: 133.0/255.0, blue: 25.0/255.0, alpha: 1.0)
+        navigationController?.navigationBar.tintColor = UIColor.white
         
         carBrand.text = suvoData.carModel
         regDate.text = suvoData.regDate
@@ -33,6 +34,11 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
         
         treatmentsTableView.delegate = self
         treatmentsTableView.dataSource = self
+    }
+    
+    @IBAction func logOut(_ sender: UIBarButtonItem) {
+        suvoData = customerData()
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
