@@ -46,9 +46,23 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Behandlinger"
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view : UIView = UIView(frame: CGRect(x: treatmentsTableView.bounds.origin.x,y: treatmentsTableView.bounds.origin.y,width: treatmentsTableView.frame.size.width,height: 40))
+        let headerLabel : UILabel = UILabel(frame: CGRect(x: 8, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 28)
+        headerLabel.textColor = UIColor(red: 249.0/255.0, green: 133.0/255.0, blue: 25.0/255.0, alpha: 1.0)
+        headerLabel.text = "Behandlinger"
+        view.addSubview(headerLabel)
+        return view
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Behandlinger"
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return suvoData.treatments.count;
