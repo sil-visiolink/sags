@@ -302,7 +302,7 @@
                         <outlet property="regDate" destination="QKk-cv-nVZ" id="ewA-hF-IT7"/>
                         <outlet property="regNr" destination="EB0-ew-Nfv" id="T7a-Jl-Rdt"/>
                         <outlet property="treatmentsTableView" destination="MS5-XB-LBs" id="TFn-tU-8b8"/>
-                        <outlet property="warrantyPeriod" destination="QFq-4G-687" id="6X2-x6-Geu"/>
+                        <outlet property="warrantyPeriod" destination="wgV-dB-8vF" id="Dcz-8t-hCZ"/>
                         <segue destination="PRP-mq-NjI" kind="show" identifier="treatment_selected" id="sFz-o4-yTH"/>
                     </connections>
                 </viewController>

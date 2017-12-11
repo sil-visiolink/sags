@@ -72,8 +72,7 @@ class treatmentCollectionViewController: UIViewController, UICollectionViewDataS
     
     func configureCell(cell: treatmentCollectionViewCell, forItemAtIndexPath: IndexPath) {
         let treatmentImageDict = imageArray[forItemAtIndexPath.item] as! [String : Any]
-//        cell.commentLabel.text = treatmentImageDict["billedbem"] as? String
-        cell.commentLabel.text = "HEST"
+        cell.commentLabel.text = treatmentImageDict["billedbem"] as? String
         
         let url = URL(string: String(format: "http://sags.suvogaranti.dk/billeder/%@", (treatmentImageDict["billedfil"] as? String)!))
         cell.imageView.kf.setImage(with: url)
