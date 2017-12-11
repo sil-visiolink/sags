@@ -113,5 +113,13 @@ class LoginViewController: UIViewController {
         }
         
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // find gradient layer
+        let gradLayers = self.view.layer.sublayers?.flatMap { $0 as? CAGradientLayer }
+        // this assumes there is only one gradient layer
+        gradLayers?.first?.frame = self.view.bounds
+    }
 }
 
