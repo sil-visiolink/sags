@@ -78,6 +78,15 @@ class treatmentCollectionViewController: UIViewController, UICollectionViewDataS
         cell.imageView.kf.setImage(with: url)
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionElementKindSectionHeader {
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CollectionReusableView", for: indexPath)
+            // do any programmatic customization, if any, here
+            return view
+        }
+        fatalError("Unexpected kind")
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width/1.33 + 40)
     }
