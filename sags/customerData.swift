@@ -16,28 +16,4 @@ class customerData: NSObject {
     var warrantyPeriod : String = ""
     var expirationDate : String = ""
     var treatments : [Any] = []
-    
-//    init(regDate: String) {
-//        self.regDate = regDate
-//    }
-//    
-//    init(regNr: String) {
-//        self.regNr = regNr
-//    }
-//    
-//    init(VIN: String) {
-//        self.VIN = VIN
-//    }
-//    
-//    init(warrantyPeriod: String) {
-//        self.warrantyPeriod = warrantyPeriod
-//    }
-//    
-//    init(expirationDate: String) {
-//        self.expirationDate = expirationDate
-//    }
-//    
-//    init(treatments: [String : Any]) {
-//        self.treatments = treatments
-//    }
 }

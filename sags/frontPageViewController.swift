@@ -8,6 +8,11 @@
 
 import UIKit
 
+class treatmentTableViewCell: UITableViewCell {
+    @IBOutlet weak var treatmentLabel: UILabel!
+    @IBOutlet weak var treatmentImageView: UIImageView!
+}
+
 class frontPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var carBrand: UILabel!
     @IBOutlet weak var regDate: UILabel!
@@ -64,17 +69,21 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
 //        return "Behandlinger"
 //    }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return suvoData.treatments.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! treatmentTableViewCell
         
         var treatmentArray = suvoData.treatments[indexPath.row] as! [Any]
         var treatments = treatmentArray[0] as! [String : Any]
-        cell.textLabel?.text = treatments["dato"] as? String
-        
+        cell.treatmentLabel?.text = treatments["dato"] as? String
+        cell.treatmentImageView?.image = UIImage(named: "right_arrow")
         
         return cell
     }
