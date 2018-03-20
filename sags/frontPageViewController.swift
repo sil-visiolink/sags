@@ -82,8 +82,7 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! treatmentTableViewCell
         
-        var treatmentArray = suvoData.treatments[indexPath.row] as! [Any]
-        var treatments = treatmentArray[0] as! [String : Any]
+        var treatments = suvoData.treatments[indexPath.row] as! [String : Any]
         cell.treatmentLabel?.text = treatments["dato"] as? String
         cell.treatmentImageView?.image = UIImage(named: "right_arrow")
         
@@ -92,8 +91,7 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        var treatmentArray = suvoData.treatments[indexPath.row] as! [Any]
-        self.selectedTreatment = treatmentArray[0] as! [String : Any]
+        self.selectedTreatment = suvoData.treatments[indexPath.row] as! [String : Any]
         super.performSegue(withIdentifier: "treatment_selected", sender: nil)
     }
     

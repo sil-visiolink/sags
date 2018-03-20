@@ -93,8 +93,7 @@ class LoginViewController: UIViewController {
         suvoData.VIN = object["stelnr"] as! String
         suvoData.warrantyPeriod = object["garantiperiode"] as! String
         suvoData.expirationDate = object["garantislut"] as! String
-        let treatmentArray : [Any] = [object["behandlinger"] as Any]
-        suvoData.treatments = [treatmentArray[0] as Any]
+        suvoData.treatments = object["behandlinger"] as! [Any]
     }
     
     func setGradientBackground() {
