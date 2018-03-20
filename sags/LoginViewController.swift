@@ -26,6 +26,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.setGradientBackground()
+        
+        let userName = UserDefaults.standard.string(forKey: "user") as String!
+        if(userName != nil) {
+            self.cardNumberTextField.text = userName
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,6 +77,7 @@ class LoginViewController: UIViewController {
                                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                                     self.present(alert, animated: true, completion: nil)
                                 } else {
+                                    UserDefaults.standard.set(self.cardNumberTextField?.text, forKey: "user")
                                      self .setupCustomerData(object: self.jsonObject)
                                      super.performSegue(withIdentifier: "login_success", sender: nil)
                                 }

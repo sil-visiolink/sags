@@ -45,6 +45,7 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         suvoData = customerData()
+        UserDefaults.standard.removeObject(forKey:"user")
         self.dismiss(animated: true, completion: nil)
     }
     
