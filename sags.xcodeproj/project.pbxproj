@@ -10,6 +10,7 @@
 		59B9C467FA18BFD78E69034B /* Pods_sags.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF10BC25D6DE2E428496B2A /* Pods_sags.framework */; };
 		F40091601FCD6C05001DD02F /* frontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F400915F1FCD6C05001DD02F /* frontPageViewController.swift */; };
 		F43DC17D1FD6D60D0046C0DA /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43DC17E1FD6D60D0046C0DA /* Kingfisher.framework */; };
+		F4542EF82060FFAD00BA469F /* displayTreatmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4542EF72060FFAD00BA469F /* displayTreatmentViewController.swift */; };
 		F46FDFD71FD6A8F9009AB8CC /* treatmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FDFD61FD6A8F9009AB8CC /* treatmentViewController.swift */; };
 		F46FDFD91FD6AA19009AB8CC /* treatmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FDFD81FD6AA19009AB8CC /* treatmentCollectionViewCell.swift */; };
 		F4EF74652059B99200FD0B32 /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F4EF74642059B99200FD0B32 /* right_arrow.png */; };
@@ -32,6 +33,7 @@
 		F41794CB1FD8259B00CA9FB9 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Main.strings; sourceTree = "<group>"; };
 		F41794CC1FD8259B00CA9FB9 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F43DC17E1FD6D60D0046C0DA /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4542EF72060FFAD00BA469F /* displayTreatmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayTreatmentViewController.swift; sourceTree = "<group>"; };
 		F46FDFD61FD6A8F9009AB8CC /* treatmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = treatmentViewController.swift; sourceTree = "<group>"; };
 		F46FDFD81FD6AA19009AB8CC /* treatmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = treatmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4EF74642059B99200FD0B32 /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				F4F273B31FCE8F1F0045FC30 /* customerData.swift */,
 				F46FDFD61FD6A8F9009AB8CC /* treatmentViewController.swift */,
 				F46FDFD81FD6AA19009AB8CC /* treatmentCollectionViewCell.swift */,
+				F4542EF72060FFAD00BA469F /* displayTreatmentViewController.swift */,
 			);
 			path = sags;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				F46FDFD91FD6AA19009AB8CC /* treatmentCollectionViewCell.swift in Sources */,
 				F40091601FCD6C05001DD02F /* frontPageViewController.swift in Sources */,
 				F4F273B41FCE8F1F0045FC30 /* customerData.swift in Sources */,
+				F4542EF82060FFAD00BA469F /* displayTreatmentViewController.swift in Sources */,
 				F4F472F51FCD3C8D006CCC40 /* LoginViewController.swift in Sources */,
 				F4F472F31FCD3C8D006CCC40 /* AppDelegate.swift in Sources */,
 			);

@@ -39,6 +39,8 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
         
         treatmentsTableView.delegate = self
         treatmentsTableView.dataSource = self
+        
+        self.navigationController?.delegate = self as! UINavigationControllerDelegate
     }
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
@@ -102,6 +104,10 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
                 treatmentCollectionViewController.treatment = self.selectedTreatment
             }
         }
+    }
+    
+    override var supportedInterfaceOrientations:UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
     
 }

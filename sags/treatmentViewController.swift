@@ -36,6 +36,8 @@ class treatmentCollectionViewController: UIViewController, UICollectionViewDataS
     
     var treatment: [String : Any] = [:]
     var imageArray : [Any] = []
+    var treatmentImage : UIImage!
+    var commentText : NSString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +80,16 @@ class treatmentCollectionViewController: UIViewController, UICollectionViewDataS
         cell.imageView.kf.setImage(with: url)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell : treatmentCollectionViewCell = collectionView.cellForItem(at: indexPath)! as! treatmentCollectionViewCell
+        let image = cell.imageView.image
+        let text = cell.commentLabel.text
+        
+        self.treatmentImage = image!
+        self.commentText = text! as NSString
+        super.performSegue(withIdentifier: "display_treatment", sender: nil)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionElementKindSectionHeader {
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CollectionReusableView", for: indexPath)
@@ -89,5 +101,19 @@ class treatmentCollectionViewController: UIViewController, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width/1.33 + 40)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "display_treatment" {
+            if segue.destination.isKind(of: displayTreatmentViewController.self)  {
+                let displayTreatmentViewController = segue.destination as! displayTreatmentViewController
+                displayTreatmentViewController.treatmentImage = self.treatmentImage
+                displayTreatmentViewController.commentText = self.commentText
+            }
+        }
+    }
+    
+    override var supportedInterfaceOrientations:UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
 }

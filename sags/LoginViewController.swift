@@ -8,6 +8,13 @@
 
 import UIKit
 
+//Global UIViewController extension to override supported interface orientation
+extension UIViewController: UINavigationControllerDelegate {
+    public func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
+        return (navigationController.topViewController?.supportedInterfaceOrientations)!
+    }
+}
+
 class LoginViewController: UIViewController {
     @IBOutlet weak var cardNumberTextField: UITextField!
     @IBOutlet weak var pinCodeTextField: UITextField!
@@ -121,5 +128,10 @@ class LoginViewController: UIViewController {
         // this assumes there is only one gradient layer
         gradLayers?.first?.frame = self.view.bounds
     }
+    
+    override var supportedInterfaceOrientations:UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+
 }
 
