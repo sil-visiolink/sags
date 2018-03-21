@@ -24,6 +24,7 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
     
     var selectedTreatment: [String : Any] = [:]
     var suvoData = customerData()
+    var treatments : [Any] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,8 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
         
         treatmentsTableView.delegate = self
         treatmentsTableView.dataSource = self
+        
+        treatments = suvoData.treatments.reversed()
         
         self.navigationController?.delegate = self as! UINavigationControllerDelegate
     }
@@ -83,8 +86,8 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! treatmentTableViewCell
         
-        var treatments = suvoData.treatments[indexPath.row] as! [String : Any]
-        cell.treatmentLabel?.text = treatments["dato"] as? String
+        var treatment = treatments[indexPath.row] as! [String : Any]
+        cell.treatmentLabel?.text = treatment["dato"] as? String
         cell.treatmentImageView?.image = UIImage(named: "right_arrow")
         
         return cell
