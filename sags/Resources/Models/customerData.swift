@@ -15,5 +15,5 @@ class customerData: NSObject {
     var VIN : String = ""
     var warrantyPeriod : String = ""
     var expirationDate : String = ""
-    var treatments : [Any] = []
+    var treatments : [treatmentData] = []
 }

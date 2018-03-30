@@ -34,8 +34,8 @@ class treatmentCollectionViewController: UIViewController, UICollectionViewDataS
     @IBOutlet weak var treatmentHeader: UILabel!
     @IBOutlet weak var treatmentComment: UILabel!
     
-    var treatment: [String : Any] = [:]
-    var imageArray : [Any] = []
+    var treatment = treatmentData(date: "", comment: "", treatmentType: "", centerID: 0, centerName: "", centerAdress: "", centerZipCode: 0, centerCity: "", centerPhone: 0, ownerID: 0, ownerName: "", images: [])
+    var imageArray : [imageData] = []
     var treatmentImage : UIImage!
     var commentText : NSString = ""
     
@@ -45,16 +45,16 @@ class treatmentCollectionViewController: UIViewController, UICollectionViewDataS
         navigationController?.navigationBar.barTintColor = UIColor(red: 249/255.0, green: 133.0/255.0, blue: 25.0/255.0, alpha: 1.0)
         navigationController?.navigationBar.tintColor = UIColor.white
         
-        treatmentHeader.text = self.treatment["behandlingstype"] as? String
+        treatmentHeader.text = self.treatment.treatmentType
         
-        let comment = self.treatment["kommentar"] as? String
-        if (comment?.isEmpty)! {
+        let comment = self.treatment.comment
+        if (comment.isEmpty) {
             treatmentComment.text = "Ingen kommentarer"
         } else {
-            treatmentComment.text = self.treatment["kommentar"] as? String
+            treatmentComment.text = self.treatment.comment
         }
         
-        imageArray = treatment["billeder"] as! [Any]
+        imageArray = treatment.images
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -73,10 +73,10 @@ class treatmentCollectionViewController: UIViewController, UICollectionViewDataS
     }
     
     func configureCell(cell: treatmentCollectionViewCell, forItemAtIndexPath: IndexPath) {
-        let treatmentImageDict = imageArray[forItemAtIndexPath.item] as! [String : Any]
-        cell.commentLabel.text = treatmentImageDict["billedbem"] as? String
+        let treatmentImage = imageArray[forItemAtIndexPath.item]
+        cell.commentLabel.text = treatmentImage.imageComment
         
-        let url = URL(string: String(format: "http://sags.suvogaranti.dk/billeder/%@", (treatmentImageDict["billedfil"] as? String)!))
+        let url = URL(string: String(format: "http://sags.suvogaranti.dk/billeder/%@", treatmentImage.imageFile))
         cell.imageView.kf.setImage(with: url)
     }
     

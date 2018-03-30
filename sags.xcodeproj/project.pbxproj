@@ -13,6 +13,8 @@
 		F4542EF82060FFAD00BA469F /* displayTreatmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4542EF72060FFAD00BA469F /* displayTreatmentViewController.swift */; };
 		F46FDFD71FD6A8F9009AB8CC /* treatmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FDFD61FD6A8F9009AB8CC /* treatmentViewController.swift */; };
 		F46FDFD91FD6AA19009AB8CC /* treatmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FDFD81FD6AA19009AB8CC /* treatmentCollectionViewCell.swift */; };
+		F49B8AD5206ED022001C82C2 /* treatmentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49B8AD4206ED022001C82C2 /* treatmentData.swift */; };
+		F49B8ADA206EEEC2001C82C2 /* imageDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49B8AD9206EEEC2001C82C2 /* imageDate.swift */; };
 		F4EF74652059B99200FD0B32 /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F4EF74642059B99200FD0B32 /* right_arrow.png */; };
 		F4EF74682059B9E300FD0B32 /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4EF74662059B9E200FD0B32 /* right_arrow@2x.png */; };
 		F4EF74692059B9E300FD0B32 /* right_arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4EF74672059B9E200FD0B32 /* right_arrow@3x.png */; };
@@ -36,6 +38,8 @@
 		F4542EF72060FFAD00BA469F /* displayTreatmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayTreatmentViewController.swift; sourceTree = "<group>"; };
 		F46FDFD61FD6A8F9009AB8CC /* treatmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = treatmentViewController.swift; sourceTree = "<group>"; };
 		F46FDFD81FD6AA19009AB8CC /* treatmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = treatmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		F49B8AD4206ED022001C82C2 /* treatmentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = treatmentData.swift; sourceTree = "<group>"; };
+		F49B8AD9206EEEC2001C82C2 /* imageDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageDate.swift; sourceTree = "<group>"; };
 		F4EF74642059B99200FD0B32 /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
 		F4EF74662059B9E200FD0B32 /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
 		F4EF74672059B9E200FD0B32 /* right_arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@3x.png"; sourceTree = "<group>"; };
@@ -81,6 +85,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F49B8AD6206ED027001C82C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F4F273B31FCE8F1F0045FC30 /* customerData.swift */,
+				F49B8AD4206ED022001C82C2 /* treatmentData.swift */,
+				F49B8AD9206EEEC2001C82C2 /* imageDate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F4F472E61FCD3C8D006CCC40 = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +124,6 @@
 				F4F472FB1FCD3C8D006CCC40 /* LaunchScreen.storyboard */,
 				F4F472FE1FCD3C8D006CCC40 /* Info.plist */,
 				F400915F1FCD6C05001DD02F /* frontPageViewController.swift */,
-				F4F273B31FCE8F1F0045FC30 /* customerData.swift */,
 				F46FDFD61FD6A8F9009AB8CC /* treatmentViewController.swift */,
 				F46FDFD81FD6AA19009AB8CC /* treatmentCollectionViewCell.swift */,
 				F4542EF72060FFAD00BA469F /* displayTreatmentViewController.swift */,
@@ -121,6 +134,7 @@
 		F4F473061FCD428E006CCC40 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F49B8AD6206ED027001C82C2 /* Models */,
 				F4F473071FCD4295006CCC40 /* Graphics */,
 			);
 			path = Resources;
@@ -270,9 +284,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F46FDFD71FD6A8F9009AB8CC /* treatmentViewController.swift in Sources */,
+				F49B8ADA206EEEC2001C82C2 /* imageDate.swift in Sources */,
 				F46FDFD91FD6AA19009AB8CC /* treatmentCollectionViewCell.swift in Sources */,
 				F40091601FCD6C05001DD02F /* frontPageViewController.swift in Sources */,
 				F4F273B41FCE8F1F0045FC30 /* customerData.swift in Sources */,
+				F49B8AD5206ED022001C82C2 /* treatmentData.swift in Sources */,
 				F4542EF82060FFAD00BA469F /* displayTreatmentViewController.swift in Sources */,
 				F4F472F51FCD3C8D006CCC40 /* LoginViewController.swift in Sources */,
 				F4F472F31FCD3C8D006CCC40 /* AppDelegate.swift in Sources */,

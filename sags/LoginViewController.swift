@@ -9,7 +9,7 @@
 import UIKit
 
 //Global UIViewController extension to override supported interface orientation
-extension UIViewController: UINavigationControllerDelegate {
+extension UIViewController: UINavigationControllerDelegate, UITextFieldDelegate {
     public func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
         return (navigationController.topViewController?.supportedInterfaceOrientations)!
     }
@@ -24,13 +24,27 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.cardNumberTextField.delegate = self
+        self.pinCodeTextField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         self.setGradientBackground()
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
         let userName = UserDefaults.standard.string(forKey: "user") as String!
         if(userName != nil) {
             self.cardNumberTextField.text = userName
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //reset when loggin out
+        suvoData = customerData()
+        if let userName = UserDefaults.standard.string(forKey: "user") as String! {
+            self.cardNumberTextField.text = userName
+        }
+        
+        self.pinCodeTextField.text = ""
     }
     
     override func didReceiveMemoryWarning() {
@@ -99,7 +113,23 @@ class LoginViewController: UIViewController {
         suvoData.VIN = object["stelnr"] as! String
         suvoData.warrantyPeriod = object["garantiperiode"] as! String
         suvoData.expirationDate = object["garantislut"] as! String
-        suvoData.treatments = object["behandlinger"] as! [Any]
+        
+        let treatments = object["behandlinger"] as! [Any]
+        var images : [imageData] = []
+        
+        for treatment in treatments {
+            let dict = treatment as! [String : Any]
+            let imageArray = dict["billeder"] as! [Any]
+            
+            for image in imageArray {
+                let imageDict = image as! [String : Any]
+                images.append(imageData(imageFile: imageDict["billedfil"] as! String, imageComment:imageDict["billedbem"] as! String))
+            }
+            
+            suvoData.treatments.append(treatmentData(date: dict["dato"] as! String, comment: dict["kommentar"] as! String, treatmentType: dict["behandlingstype"] as! String, centerID: dict["centerid"] as! Int, centerName: dict["centernavn"] as! String, centerAdress: dict["centeradresse"] as! String, centerZipCode: dict["centerpostnr"] as! Int, centerCity: dict["centerby"] as! String, centerPhone: dict["centertelefon"] as! Int, ownerID: dict["ejerid"] as! Int, ownerName: dict["ejernavn"] as! String, images: images))
+            
+            
+        }
     }
     
     func setGradientBackground() {
@@ -137,6 +167,5 @@ class LoginViewController: UIViewController {
     override var supportedInterfaceOrientations:UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
     }
-
 }
 

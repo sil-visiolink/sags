@@ -22,9 +22,9 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var expirationDate: UILabel!
     @IBOutlet weak var treatmentsTableView: UITableView!
     
-    var selectedTreatment: [String : Any] = [:]
+    var selectedTreatment = treatmentData(date: "", comment: "", treatmentType: "", centerID: 0, centerName: "", centerAdress: "", centerZipCode: 0, centerCity: "", centerPhone: 0, ownerID: 0, ownerName: "", images: [])
     var suvoData = customerData()
-    var treatments : [Any] = []
+    var treatments : [treatmentData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
         
         treatments = suvoData.treatments.reversed()
         
-        self.navigationController?.delegate = self as! UINavigationControllerDelegate
+        self.navigationController?.delegate = self as UINavigationControllerDelegate
     }
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
@@ -86,8 +86,8 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! treatmentTableViewCell
         
-        var treatment = treatments[indexPath.row] as! [String : Any]
-        cell.treatmentLabel?.text = treatment["dato"] as? String
+        let treatment = treatments[indexPath.row]
+        cell.treatmentLabel?.text = treatment.date
         cell.treatmentImageView?.image = UIImage(named: "right_arrow")
         
         return cell
@@ -95,7 +95,7 @@ class frontPageViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.selectedTreatment = suvoData.treatments[indexPath.row] as! [String : Any]
+        self.selectedTreatment = treatments[indexPath.row]
         super.performSegue(withIdentifier: "treatment_selected", sender: nil)
     }
     
